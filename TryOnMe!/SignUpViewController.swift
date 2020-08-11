@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var txtFirstName: UITextField!
     
@@ -39,18 +39,65 @@ class SignUpViewController: UIViewController {
         var passwordValid = false
         var passwordAgainValid = false
         
+    // to store the current active textfield
+    var activeTextField : UITextField? = nil
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            //hiding keyboard when tapped on view
+                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.viewTapped(gestureRecognizer:)))
+                        
+                        view.addGestureRecognizer(tapGesture)
+            
+            // add delegate to all textfields to self (this view controller)
+            txtFirstName.delegate = self
+            txtLastName.delegate = self
+            txtEmail.delegate = self
+            txtPassword.delegate = self
+            txtPasswordAgain.delegate = self
+            //adjusting as per keyboard
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
 
-            // Do any additional setup after loading the view.
-        }
-        
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
+                 
+                 // Do any additional setup after loading the view.
+             }
+             
         //func to check if tapped on view
         
         @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
         {
             view.endEditing(true)
+        }
+    //keyboard hide and show funcs
+        @objc func keyboardWillShow(sender: NSNotification) {
+
+            var shouldMoveViewUp = false
+            let info = sender.userInfo!
+            let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+            // if active text field is not nil
+            if let activeTextField = activeTextField {
+
+              let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+              
+              let topOfKeyboard = self.view.frame.height - keyboardFrame.size.height
+
+              // if the bottom of Textfield is below the top of keyboard, move up
+              if bottomOfTextField > topOfKeyboard {
+                shouldMoveViewUp = true
+              }
+            }
+
+            if(shouldMoveViewUp) {
+              self.view.frame.origin.y = 0 - keyboardFrame.size.height
+            }
+            
+             //self.view.frame.origin.y = -(keyboardFrame.size.height + 20)// Move view 150 points upward
+        }
+
+        @objc func keyboardWillHide(sender: NSNotification) {
+             self.view.frame.origin.y = 0 // Move view to original position
         }
         
         
@@ -268,4 +315,17 @@ class SignUpViewController: UIViewController {
      }
      */
 }
+}
+
+extension SignUpViewController {
+  // when user select a textfield, this method will be called
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    // set the activeTextField to the selected textfield
+    self.activeTextField = textField
+  }
+    
+  // when user click 'done' or dismiss the keyboard
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    self.activeTextField = nil
+  }
 }

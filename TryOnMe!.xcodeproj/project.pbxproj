@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		101C084724DDD5890047E52F /* QRData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C084624DDD5890047E52F /* QRData.swift */; };
+		101C084924DDDA940047E52F /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C084824DDDA940047E52F /* QRScannerView.swift */; };
+		101C084B24DDDAB90047E52F /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C084A24DDDAB90047E52F /* QRScannerViewController.swift */; };
+		101C084D24DDDAEC0047E52F /* CopyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C084C24DDDAEC0047E52F /* CopyLabel.swift */; };
+		101C085124DDDB8D0047E52F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C085024DDDB8D0047E52F /* DetailViewController.swift */; };
+		101C085324E1ADE80047E52F /* products.plist in Resources */ = {isa = PBXBuildFile; fileRef = 101C085224E1ADE80047E52F /* products.plist */; };
+		101C085524E1AFC50047E52F /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C085424E1AFC50047E52F /* Products.swift */; };
+		101C085724E1B15F0047E52F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C085624E1B15F0047E52F /* ProductCell.swift */; };
+		101C085A24E1C0660047E52F /* DummyDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101C085924E1C0660047E52F /* DummyDataClass.swift */; };
 		10592C7224DD262A005FBCBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10592C7124DD262A005FBCBF /* LoginViewController.swift */; };
 		10592C7424DD2F5F005FBCBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10592C7324DD2F5F005FBCBF /* SignUpViewController.swift */; };
 		10592C7724DD318C005FBCBF /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10592C7624DD318C005FBCBF /* ExtensionString.swift */; };
@@ -24,6 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101C084624DDD5890047E52F /* QRData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRData.swift; sourceTree = "<group>"; };
+		101C084824DDDA940047E52F /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		101C084A24DDDAB90047E52F /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		101C084C24DDDAEC0047E52F /* CopyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyLabel.swift; sourceTree = "<group>"; };
+		101C085024DDDB8D0047E52F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		101C085224E1ADE80047E52F /* products.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = products.plist; sourceTree = "<group>"; };
+		101C085424E1AFC50047E52F /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		101C085624E1B15F0047E52F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		101C085924E1C0660047E52F /* DummyDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataClass.swift; sourceTree = "<group>"; };
 		10592C7124DD262A005FBCBF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		10592C7324DD2F5F005FBCBF /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		10592C7624DD318C005FBCBF /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
@@ -56,6 +74,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101C084324DDD4DF0047E52F /* QR Code */ = {
+			isa = PBXGroup;
+			children = (
+				101C084624DDD5890047E52F /* QRData.swift */,
+				101C084824DDDA940047E52F /* QRScannerView.swift */,
+				101C084A24DDDAB90047E52F /* QRScannerViewController.swift */,
+				101C084C24DDDAEC0047E52F /* CopyLabel.swift */,
+				101C085024DDDB8D0047E52F /* DetailViewController.swift */,
+			);
+			path = "QR Code";
+			sourceTree = "<group>";
+		};
+		101C085824E1C0540047E52F /* DummyData */ = {
+			isa = PBXGroup;
+			children = (
+				101C085924E1C0660047E52F /* DummyDataClass.swift */,
+			);
+			path = DummyData;
+			sourceTree = "<group>";
+		};
 		10592C7524DD3170005FBCBF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +123,8 @@
 		10B4EBF324CA68C600F837F4 /* TryOnMe! */ = {
 			isa = PBXGroup;
 			children = (
+				101C085824E1C0540047E52F /* DummyData */,
+				101C084324DDD4DF0047E52F /* QR Code */,
 				10592C7524DD3170005FBCBF /* Extensions */,
 				10F8529824DD1EF100A7A286 /* GoogleService-Info.plist */,
 				10B4EC2B24CF5BF500F837F4 /* objects */,
@@ -93,11 +133,14 @@
 				10B4EBF624CA68C600F837F4 /* art.scnassets */,
 				10B4EBF824CA68C600F837F4 /* ViewController.swift */,
 				10B4EBFA24CA68C600F837F4 /* Main.storyboard */,
+				101C085224E1ADE80047E52F /* products.plist */,
 				10B4EBFD24CA68C700F837F4 /* Assets.xcassets */,
 				10B4EBFF24CA68C700F837F4 /* LaunchScreen.storyboard */,
 				10B4EC0224CA68C700F837F4 /* Info.plist */,
 				10592C7124DD262A005FBCBF /* LoginViewController.swift */,
 				10592C7324DD2F5F005FBCBF /* SignUpViewController.swift */,
+				101C085624E1B15F0047E52F /* ProductCell.swift */,
+				101C085424E1AFC50047E52F /* Products.swift */,
 			);
 			path = "TryOnMe!";
 			sourceTree = "<group>";
@@ -196,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				101C085324E1ADE80047E52F /* products.plist in Resources */,
 				10B4EBF724CA68C600F837F4 /* art.scnassets in Resources */,
 				10B4EC0124CA68C700F837F4 /* LaunchScreen.storyboard in Resources */,
 				10F8529924DD1EF100A7A286 /* GoogleService-Info.plist in Resources */,
@@ -254,13 +298,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				10592C7224DD262A005FBCBF /* LoginViewController.swift in Sources */,
+				101C084D24DDDAEC0047E52F /* CopyLabel.swift in Sources */,
+				101C084B24DDDAB90047E52F /* QRScannerViewController.swift in Sources */,
+				101C085524E1AFC50047E52F /* Products.swift in Sources */,
 				10592C7424DD2F5F005FBCBF /* SignUpViewController.swift in Sources */,
 				10B4EC3124D0CFA900F837F4 /* DashboardCell.swift in Sources */,
 				10B4EC2D24CF5C2C00F837F4 /* Mannequin.swift in Sources */,
+				101C085724E1B15F0047E52F /* ProductCell.swift in Sources */,
+				101C084924DDDA940047E52F /* QRScannerView.swift in Sources */,
+				101C084724DDD5890047E52F /* QRData.swift in Sources */,
 				10592C7724DD318C005FBCBF /* ExtensionString.swift in Sources */,
+				101C085A24E1C0660047E52F /* DummyDataClass.swift in Sources */,
 				10B4EC2F24D0C82600F837F4 /* DashboardView.swift in Sources */,
 				10B4EBF924CA68C600F837F4 /* ViewController.swift in Sources */,
 				10B4EBF524CA68C600F837F4 /* AppDelegate.swift in Sources */,
+				101C085124DDDB8D0047E52F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

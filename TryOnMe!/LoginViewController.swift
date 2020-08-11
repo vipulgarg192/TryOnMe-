@@ -1,11 +1,3 @@
-//
-//  LoginViewController.swift
-//  TryOnMe!
-//
-//  Created by vipul garg on 2020-08-07.
-//  Copyright © 2020 VipulGarg. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -17,15 +9,26 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
+        //hiding keyboard when tapped on view
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.viewTapped(gestureRecognizer:)))
+               
+               view.addGestureRecognizer(tapGesture)
+        
         // Do any additional setup after loading the view.
     }
+    //func to check if tapped on view
+       
+       @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer)
+       {
+           view.endEditing(true)
+       }
     
     
     @IBAction func btnLogin(_ sender: UIButton) {
         let lowerCasedEmail = txtEmail.text!.lowercased()
-                
-                Auth.auth().signIn(withEmail: lowerCasedEmail, password: self.txtPassword.text!) { [weak self] user, error in
+        
+               Auth.auth().signIn(withEmail: lowerCasedEmail, password: self.txtPassword.text!) { [weak self] user, error in
                     //guard let strongSelf = self else { return }
                     // ...
                     if error == nil{
